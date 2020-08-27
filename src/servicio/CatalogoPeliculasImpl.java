@@ -52,7 +52,16 @@ public class CatalogoPeliculasImpl implements ICatalogoPeliculas{
 
 	@Override
 	public void iniciarCatalogoPeliculas() {
-		
+		try {
+			if(this.datos.existe(NOMBRE)) {
+				datos.borrar(NOMBRE);
+				datos.crear(NOMBRE);
+			}else {
+				datos.crear(NOMBRE);
+			}
+		} catch (AccesoDatosEx e) {
+			e.printStackTrace();
+		}
 	}
 
 }
