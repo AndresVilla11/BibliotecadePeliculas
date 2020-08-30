@@ -10,9 +10,12 @@ public class CatalogoPeliculasImpl implements ICatalogoPeliculas{
 	
 	private final IAccesoDatos datos;
 
+
+	
 	public CatalogoPeliculasImpl() {
 		this.datos = new AccesoDatosImpl();
 	}
+	
 	@Override
 	public void agregarPeliculas(String nombrePeliculas) {
 		Peliculas pelicula = new Peliculas(nombrePeliculas);
@@ -63,5 +66,4 @@ public class CatalogoPeliculasImpl implements ICatalogoPeliculas{
 			e.printStackTrace();
 		}
 	}
-
 }
